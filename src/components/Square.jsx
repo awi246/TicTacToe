@@ -1,11 +1,16 @@
+const Square = ({ value, onClick, isWinningSquare }) => {
+  const colorClassName = value === 'X' ? 'text-green' : 'text-orange';
+  const winningClassName = isWinningSquare ? 'winning' : '';
 
-
-const Square = ({value , onclick}) =>{
-   
-    return <button type="button" className="square" onClick= {onclick}>
-        {value}
-        </button>
-    
+  return (
+    <button
+      type="button"
+      className={`square ${colorClassName} ${winningClassName}`}
+      onClick={onClick}
+    >
+      {value}
+    </button>
+  );
 };
 
 export default Square;
